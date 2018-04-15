@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int hurdleRace(int k, vector <int> height) {
+    int n = height.size();
+    int highest = k;
+    
+    for (int i = 0; i < n; i++){
+        if (height[i] > highest)
+            highest = height[i];
+    }
+    
+    int r = highest - k;
+    return r;
+}
+
+int main() {
+    int n;
+    int k;
+    cin >> n >> k;
+    vector<int> height(n);
+    for(int height_i = 0; height_i < n; height_i++){
+       cin >> height[height_i];
+    }
+    int result = hurdleRace(k, height);
+    cout << result << endl;
+    return 0;
+}
